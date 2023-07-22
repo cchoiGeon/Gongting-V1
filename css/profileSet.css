@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+  --line-border-fill: #FF7222;
+  --line-border-empty: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Noto Sans KR;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+  width: 375px;
+  margin: 0 auto;
+}
+
+.body{
+    width: 375px;
+    height: 100%;
+    /* background-color: #fcfcfc; */
+}
+
+#back-icon {
+    display: flex;
+    padding-top: 47px;
+    margin-left: 8px;
+    margin-bottom: 20px;
+}
+
+#back-icon p {
+    margin-top: -7px;
+    margin-left: 2px;
+    font-family: Noto Sans KR;
+    font-size: 16px;
+    color: #111;
+    font-weight: 500;
+    line-height: 44px;
+}
+
+#x-botton {
+    margin-top: -7px;
+    margin-left: 209px;
+}
+
+.container {
+  text-align: center;
+  
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top : 16px;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 335px;
+  margin-left: 20px;
+}
+
+.progress-container::before {
+  content: ""; /* Mandatory with ::before */
+  background-color: #e0e0e0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+
+.progress {
+  background-color: #FF7222;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0%;
+  transform: translateY(-50%);
+  height: 4px;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  background-color: #fff;
+  border-radius: 50%;
+  /* height: 0.1px;
+  width: 0.1px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease;
+}
+
+.title {
+    margin-left: 20px;
+    margin-top: 32px;
+}
+
+#title-text {
+    color:#111;
+    font-family: Noto Sans KR;
+    font-size: 22px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+#sub-text {
+    margin: 0;
+    color: #898989;
+    font-family: Noto Sans KR;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.profile-dropdown {
+    margin-top: 64px;
+    text-align: center;
+    display: block;
+    /* width: 335px; */
+    margin-bottom: 203px;
+    border-radius: 100px;
+}
+
+select {
+    width:335px;
+    height: 48px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: 1px solid #EDEDEF;
+    color: #5f5f5f;
+    font-family: Noto Sans KR;
+    font-size: 14px;
+    font-weight: 500;
+    background: url('/icon/Arrow\ -\ Down\ 2.png') no-repeat 95% 50%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance : none;
+    margin-bottom: 10px;
+}
+select::-ms-expand {
+  display: none;
+}
+
+
+
+button {
+  font-family: Noto Sans KR;
+  display: block;
+  position: fixed;
+  bottom: 40px;
+  text-align: center;
+  width: 335px;
+  height: 50px;
+  background-color: #FF7222;
+  color: #fff;
+  border: 0;
+  border-radius: 100px;
+  cursor: pointer;
+  padding: 8px 30px;
+  margin-left: 20px;
+  font-size: 14px;
+
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+input[type=text] {
+	width: 335px;
+	height: 48px;
+	color: #5F5F5F;
+    font-family: Noto Sans KR;
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 16px;
+    border-radius: 10px;
+    border: 1px solid #EDEDEF;
+    color: #5f5f5f;
+}

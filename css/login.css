@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 375px;
+    /* max-width: 375px; */
+    background-color: #ffffff;
+    margin: 0 auto;
+
+}
+.body{
+    width: 375px;
+    height: 100%;
+    /* background: #fcfcfc; */
+}
+
+#back-icon {
+    padding-top: 47px;
+    margin-left: 8px;
+    margin-bottom: 20px;
+}
+
+section p {
+    margin-left: 20px;
+    margin-bottom: 100px;
+    color: #111;
+    font-family: Noto Sans KR;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+#id input{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    background-image: url(https://i.postimg.cc/g2gRRGsx/mail.png);
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    padding-left: 40px;
+    border-radius: 5px;
+    border: 1px solid #DADADA;
+    width: 335px;
+    height: 40px;
+    box-sizing: border-box;
+    outline: none;
+    
+    color: #5F5F5F;
+    font-family: Noto Sans KR;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#password input{
+    margin-left: 20px;
+    margin-bottom: 42px;
+    background-image: url(https://i.postimg.cc/g2gRRGsx/mail.png);
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    padding-left: 40px;
+    border-radius: 5px;
+    border: 1px solid #DADADA;
+    width: 335px;
+    height: 40px;
+    box-sizing: border-box;
+    outline: none;
+    
+    color: #5F5F5F;
+    font-family: Noto Sans KR;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#login-button {
+    margin: 0 auto;
+    width: 335px;
+    height: 44px;
+    padding: 10px;
+    border-radius: 22px;
+    background: #212121;
+    margin-bottom: 100px;
+    margin: 0 auto;
+    width: 335px;
+    height: 44px;
+    padding: 10px;
+    border-radius: 22px;
+    background: #212121;
+    margin-bottom: 100px;
+    display: block;
+    text-align: center;
+    color: #E2E2E2;
+    font-family: Noto Sans KR;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+#signup {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 302px;
+}
+
+#signup p{
+    color: #949494;
+    font-family: Noto Sans KR;
+    font-size: 10px;
+    font-weight: 500;
+    padding-right: 4px;
+}
+#signup a{
+    color: #212121;
+    font-family: Noto Sans KR;
+    font-size: 10px;
+    font-weight: 500;
+    text-decoration: none;
+}

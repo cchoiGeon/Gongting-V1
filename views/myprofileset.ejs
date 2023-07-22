@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공팅</title>
+    <link rel="stylesheet" href="profileSet.css">
+</head>
+<body>
+    <div class="body">
+        <header>
+            <div id="back-icon">
+                <a href="">
+                    <img src="https://i.postimg.cc/RVWHw7kB/Arrow-Left-2.png">
+                </a>
+                <p>프로필 설정</p>
+                <a id="x-botton" href="/intro">
+                    <img src ="icon/x-botton.png">
+                </a>
+            </div>
+        </header>
+        <div class="container">
+            <div class="progress-container">
+              <div class="progress" id="progress"></div>
+              <div class="circle active"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+
+              <!-- <div class="circle"></div> -->
+            </div>
+
+
+            <!-- <button class="btn" id="prev" disabled>Prev</button> -->
+        </div>
+
+          <section>
+            <div class="title">
+                <p id="title-text">내 정보</p>
+                <p id="sub-text">상대방과 매칭 시 보여지는 필수항목이에요.</p>
+            </div>
+
+            <form action="/setting/myprofile" method="post">
+                <div class="profile-dropdown">
+                    <div id="frist">
+                        <div id="myprofileSettingSex">
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="sex">
+                                <option selected>성별을 설정해주세요</option>
+                                <option value="man">남자</option>
+                                <option value="woman">여자</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="age">
+                                <option selected>나이를 설정해주세요</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                            </select>
+                        </div>
+                        <div id="myprofileSettingMajor">
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="major">
+                                <option selected>본인 학과를 선택해주세요</option>
+                                <option value="1">컴퓨터 공학부 - 컴퓨터공학</option>
+                                <option value="2">컴퓨터 공학부 - 소프트웨어</option>
+                                <option value="3">게임공학과</option>
+                                <option value="4">인공지능학과</option>
+                                <option value="5">기계공학과</option>
+                                <option value="6">기계설계공학부 - 기계설계전공</option>
+                                <option value="7">기계설계공학부 - 지능형모빌리티전공</option>
+                                <option value="8">메카트로닉스공학부 - 메카트로닉스공학 전공</option>
+                                <option value="9">메카트로닉스공학부 - AI로봇 전공</option>
+                                <option value="10">전자공학부 - 전자공학전공</option>
+                                <option value="11">전자공학부 - 임베디드시스템전공</option>
+                                <option value="12">신소재공학과</option>
+                                <option value="13">생명화학공학과</option>
+                                <option value="14">나노반도체공학과</option>
+                                <option value="15">에너지 전기공학과</option>
+                                <option value="16">경영학부 - 경영학전공</option>
+                                <option value="17">경영학부 - 데이터사이언스경영전공</option>
+                                <option value="18">경영학부 - IT경영전공</option>
+                                <option value="19">디자인공학부 - 산업디자인공학전공</option>
+                                <option value="20">디자인공학부 - 미디어디자인공학전공</option>
+                                <option value="21">산업융합공학과 디지털경영학과</option>
+                            </select>
+                        </div>
+                        <div id="myprofileSettingMajor">
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="smoke">
+                                <option selected>흡연 여부를 선택해주세요</option>
+                                <option value="1">흡연자</option>
+                                <option value="2">비흡연자</option>
+                            </select>
+                        </div>
+                        <button onclick="fristDone(event)" id="next"> 다음 </button>
+                    </div>
+                
+
+                <div id="second" style="display: none;">
+                    <div id="myprofileSettingMajor">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="socialmediaidtype">
+                            <option selected>연락처 종류를 선택해주세요</option>
+                            <option value="instagram">인스타</option>
+                            <option value="kakaotalk">카카오톡</option>
+                            <option value="callnum">전화번호</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 row">
+                        <!-- <label for="inputPassword" class="col-sm-2 col-form-label">연락처를 적어주세요</label> -->
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputPassword" name="socialmediaid" placeholder="ID">
+                        </div>
+                    </div>
+                    <button onclick="secondDone(event)" id="next"> 다음 </button>
+                </div>
+                <div id="thrid" style="display: none;">
+                    <div id="myprofileSettingMajor">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="mbti1">
+                            <option selected>MBTI 첫 번째 글자</option>
+                            <option value="I">I</option>
+                            <option value="E">E</option>
+                        </select>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="mbti2">
+                            <option selected>MBTI 두 번째 글자</option>
+                            <option value="N">N</option>
+                            <option value="S">S</option>
+                        </select>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="mbti3">
+                            <option selected>MBTI 세 번째 글자</option>
+                            <option value="F">F</option>
+                            <option value="T">T</option>
+                        </select>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="mbti4">
+                            <option selected>MBTI 네 번째 글자</option>
+                            <option value="P">P</option>
+                            <option value="J">J</option>
+                        </select>
+                    </div>
+                    <button onclick="thridDone(event)" id="next"> 다음 </button>
+                </div>
+                <div id="four" style="display: none;">
+                    <div id="myprofileSettingMajor">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="hobby1">
+                            <option selected>취미 설정해주세요</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="hobby2">
+                            <option selected>취미 설정해주세요</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="hobby3">
+                            <option selected>취미 설정해주세요</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+                    <button onclick="fourDone(event)" id="next"> 다음 </button>
+                </div>
+                <div id="five" style="display: none;">
+                    <div id="myprofileSettingMajor">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="features1">
+                            <option selected>내 특징을 설정해주세요</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="features2">
+                            <option selected>내 특징을 설정해주세요</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="features3">
+                            <option selected>내 특징을 설정해주세요</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+                    <button type="submit" >
+                        저장하기
+                    </button>
+                </div>
+            </div>
+            </form>
+          </section>
+          <script src="profileSet.js"></script>
+        </div>
+
+</body>
+</html>

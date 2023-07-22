@@ -3,7 +3,6 @@ const db = require('../db')
 const User = require('../models/user')
 const LoveProfile = require('../models/loveprofile')
 const FriendProfile = require('../models/friendprofile')
-const {lovealgorithm,friendalgorithm} = require('./algorithm.js')
 
 exports.adminpage = (req,res) =>{
     res.render('admin')
@@ -30,11 +29,14 @@ exports.mysqlverify = async(req,res) =>{
 }
 exports.mysqlsubmit = async(req,res,next) =>{
     try{
-        let loveuserlist = await LoveProfile.findAll({}) ?? false
-        let frienduserlist = await FriendProfile.findAll({}) ?? false
-        console.log(frienduserlist)
+        console.log('1')
+        let loveuserlist = await LoveProfile.findAll({})
+        console.log('2')
+        let frienduserlist = await FriendProfile.findAll({})
+        console.log('3')
         let loveprofile='';
         let friendprofile='';
+        console.log('4')
         if(loveuserlist){
             for(let i=0; i < loveuserlist.length; i++){
                 loveprofile += `
@@ -72,8 +74,8 @@ exports.mysqlsubmit = async(req,res,next) =>{
     }
 }
 exports.lovealgorithm = (req,res) =>{
-    lovealgorithm()
+    
 }
 exports.friendalgorithm = (req,res) =>{
-    friendalgorithm()
+   
 }

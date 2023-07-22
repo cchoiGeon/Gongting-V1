@@ -31,42 +31,40 @@ exports.mysqlsubmit = async(req,res,next) =>{
     try{
         let loveuserlist = await LoveProfile.findAll({})
         let frienduserlist = await FriendProfile.findAll({})
-        console.log('loveuserlist',loveuserlist)
-        console.log('frienduserlist',frienduserlist)
-        // let loveprofile='';
-        // let friendprofile='';
-        // if(loveuserlist){
-        //     for(let i=0; i < loveuserlist.length; i++){
-        //         loveprofile += `
-        //         <tr>
-        //             <td> ${loveuserlist[i].email}</td>
-        //             <td> ${loveuserlist[i].sex}</td>
-        //             <td> ${loveuserlist[i].age}</td>
-        //             <td> ${loveuserlist[i].smoke}</td>
-        //             <td> ${loveuserlist[i].major}</td>
-        //             <td> ${loveuserlist[i].mbti}</td>
-        //             <td> ${loveuserlist[i].hobby}</td>
-        //             <td> ${loveuserlist[i].features}</td>
-        //         </tr>
-        //         `
-        //     }   
-        // }
-        // if(frienduserlist){
-        //     for(let i=0; i < frienduserlist.length; i++){
-        //         friendprofile += `
-        //         <tr>
-        //             <td> ${frienduserlist[i].email}</td>
-        //             <td> ${frienduserlist[i].sex}</td>
-        //             <td> ${frienduserlist[i].age}</td>
-        //             <td> ${frienduserlist[i].smoke}</td>
-        //             <td> ${frienduserlist[i].major}</td>
-        //             <td> ${frienduserlist[i].mbti}</td>
-        //             <td> ${frienduserlist[i].hobby}</td>
-        //         </tr>
-        //         `
-        //     }  
-        // }
-        // res.render('mysqlsubmit',{'loveprofile':loveprofile,'friendprofile':friendprofile})
+        let loveprofile='';
+        let friendprofile='';
+        if(loveuserlist){
+            for(let i=0; i < loveuserlist.length; i++){
+                loveprofile += `
+                <tr>
+                    <td> ${loveuserlist[i].email}</td>
+                    <td> ${loveuserlist[i].sex}</td>
+                    <td> ${loveuserlist[i].age}</td>
+                    <td> ${loveuserlist[i].smoke}</td>
+                    <td> ${loveuserlist[i].major}</td>
+                    <td> ${loveuserlist[i].mbti}</td>
+                    <td> ${loveuserlist[i].hobby}</td>
+                    <td> ${loveuserlist[i].features}</td>
+                </tr>
+                `
+            }   
+        }
+        if(frienduserlist){
+            for(let i=0; i < frienduserlist.length; i++){
+                friendprofile += `
+                <tr>
+                    <td> ${frienduserlist[i].email}</td>
+                    <td> ${frienduserlist[i].sex}</td>
+                    <td> ${frienduserlist[i].age}</td>
+                    <td> ${frienduserlist[i].smoke}</td>
+                    <td> ${frienduserlist[i].major}</td>
+                    <td> ${frienduserlist[i].mbti}</td>
+                    <td> ${frienduserlist[i].hobby}</td>
+                </tr>
+                `
+            }  
+        }
+        res.render('mysqlsubmit',{'loveprofile':loveprofile,'friendprofile':friendprofile})
     }catch(error){
         next(error)
     }

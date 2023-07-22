@@ -8,7 +8,7 @@ const {isLoggedIn} = require('../middlewares/index');
 
 router.get('/',isLoggedIn,isadmin,adminpage)
 router.get('/verify',isLoggedIn,isadmin,mysqlverify)
-router.get('/sumit',isLoggedIn,isadmin,mysqlsubmit)
+router.get('/submit',isLoggedIn,isadmin,mysqlsubmit)
 router.get('/lovealgorithm',isLoggedIn,isadmin,lovealgorithm)
 router.get('/friendalgorithm',isLoggedIn,isadmin,friendalgorithm)
 

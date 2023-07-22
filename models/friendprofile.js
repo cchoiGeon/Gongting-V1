@@ -31,6 +31,11 @@ class FriendProfile extends Sequelize.Model {
                 type: Sequelize.TEXT,
                 allowNull: false,
             },
+            ismatched:{
+                type: Sequelize.TEXT,
+                allowNull: true,
+                defaultValue: 'X',
+            },
         }, {
             sequelize,
             timestamps: false,

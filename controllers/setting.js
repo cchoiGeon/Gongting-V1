@@ -20,10 +20,10 @@ exports.myprofileInfo = async(req,res,next) =>{
             where:{email:req.user.email}
         })
         if(exUser){
-            await db.query('UPDATE userprofiles SET email=?, name=? ,sex=?, age=?, major=?, smoke=?, socialmediaid=?, socialmediaidtype=?, mbti=?, hobby=?, features=? WHERE email=?', [req.user.email, req.user.name ,post.sex, post.age, post.major, post.smoke, post.socialmediaid, post.socialmediaidtype, mbti, hobby, features, req.user.email]);
+            await db.query('UPDATE userprofiles SET email=?, name=? ,sex=?, age=?, major=?, smoke=?, socialmediaid=?, socialmediaidtype=?, mbti=?, hobby=?, features=? WHERE email=?', [req.user.email, req.user.name ,post.sex, post.age, post.major, post.smoke, post.socialmediaid, post.socialmediaidtype, mbti, hobby, features,req.user.email]);
             return res.redirect('/myprofile')
         }else{
-            await db.query('INSERT INTO userprofiles(email,name,sex,age,major,smoke,socialmediaid,socialmediaidtype,mbti,hobby,features) VALUES(?,?,?,?,?,?,?,?,?,?,?)',[req.user.email,req.user.name,post.sex,post.age,post.major,post.smoke,post.socialmediaid,post.socialmediaidtype,mbti,hobby,features])
+            await db.query('INSERT INTO userprofiles(email,name,sex,age,major,smoke,socialmediaid,socialmediaidtype,mbti,hobby,features) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)',[req.user.email,req.user.name,post.sex,post.age,post.major,post.smoke,post.socialmediaid,post.socialmediaidtype,mbti,hobby,features])
             await db.query('UPDATE users SET myprofile=? WHERE email=?',['O',req.user.email])
             return res.redirect('/myprofile')
         }

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
-const {homepage,loginpage,signuppage,intropage,myprofilepage,matching,matchingresult,myprofilesetting,verify, lovematching, friendmatching, gopage, abcd} = require('../controllers/page')
+const {homepage,loginpage,signuppage,intropage,myprofilepage,matching,matchingresult,myprofilesetting,verify, lovematching, friendmatching, gopage} = require('../controllers/page')
 const {isLoggedIn,isNotLoggedIn} = require('../middlewares/index');
 const {isverify} = require('../controllers/auth')
 
@@ -15,7 +15,6 @@ router.get('/intro',isNotLoggedIn,intropage)
 router.get('/login',isNotLoggedIn,loginpage)
 router.get('/signup',isNotLoggedIn,signuppage)
 
-router.get('/abc',isLoggedIn,abcd)
 router.get('/gomyprofilesetting',isLoggedIn,gopage)
 router.get('/myprofile',isLoggedIn,myprofilepage)
 router.get('/matching',isLoggedIn,matching)

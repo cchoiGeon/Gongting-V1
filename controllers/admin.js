@@ -152,16 +152,11 @@ exports.lovealgorithm = async(req,res,next) =>{
             return res.redirect('/')
         } else { // 다 같을 때
             await db.query('INSERT INTO results(email,name,sex,age,smoke,major,mbti,hobby,features,socialmediaid,socialmediatype) VALUES(?,?,?,?,?,?,?,?,?,?,?)', [User.email, MatchedUser.name, MatchedUser.sex, MatchedUser.age,  MatchedUser5.smoke ,MatchedUser.major, MatchedUser.mbti, MatchedUser.hobby, MatchedUser.features, MatchedUser.socialmediaid, MatchedUser.socialmediaidtype]);
-            console.log('1')
-            await db.query('UPDATE userprofiles SET ismatched=? WHERE=?',['O',User.email])
-            console.log('2')
-            await db.query('UPDATE loveprofiles SET ismatched=? WHERE=?',['O',User.email])
-            console.log('3')
+            await db.query("UPDATE userprofiles SET ismatched=? WHERE=?",['O',User.email])
+            await db.query("UPDATE loveprofiles SET ismatched=? WHERE=?",['O',User.email])
             await db.query('INSERT INTO results(email,name,sex,age,smoke,major,mbti,hobby,features,socialmediaid,socialmediatype) VALUES(?,?,?,?,?,?,?,?,?,?,?)', [MatchedUser.email, MatchingUser.name, MatchingUser.sex, MatchingUser.age, MatchingUser.smoke ,MatchingUser.major, MatchingUser.mbti, MatchingUser.hobby, MatchingUser.features, MatchingUser.socialmediaid, MatchingUser.socialmediaidtype]);
-            console.log('4')
-            await db.query('UPDATE userprofiles SET ismatched=? WHERE=?',['O',MatchedUser.email])
-            console.log('5')
-            await db.query('UPDATE loveprofiles SET ismatched=? WHERE=?',['O',MatchedUser.email])
+            await db.query("UPDATE userprofiles SET ismatched=? WHERE=?",['O',MatchedUser.email])
+            await db.query("UPDATE loveprofiles SET ismatched=? WHERE=?",['O',MatchedUser.email])
             return res.redirect('/')
         }
     }catch(error){

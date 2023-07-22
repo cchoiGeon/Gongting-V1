@@ -45,7 +45,7 @@ exports.loveprofile = async(req,res,next) =>{
             await db.query('UPDATE loveprofiles SET email=?, sex=?, age=?, major=?, smoke=?, mbti=?, hobby=? ,features=? WHERE email=?', [req.user.email, post.sex, post.age ,post.major, post.smoke, mbti, hobby ,features, req.user.email]);
             return res.redirect('/myprofile')
         }else{
-            await db.query('INSERT INTO loveprofiles(email,sex,age,major,smoke,mbti,hobby,features) VALUES(?,?,?,?,?,?,?,?)',[req.user.email,post.sex,post.age,post.major,post.smoke,mbti,hobby,features])
+            await db.query('INSERT INTO loveprofiles(email,sex,age,major,smoke,mbti,hobby,features,ismatched) VALUES(?,?,?,?,?,?,?,?,?)',[req.user.email,post.sex,post.age,post.major,post.smoke,mbti,hobby,features,'X'])
             return res.redirect('/myprofile')
         }
     }catch(error){
@@ -65,7 +65,7 @@ exports.friendprofile = async(req,res,next) =>{
             await db.query('UPDATE friendprofiles SET email=?, sex=?, age=?, smoke=? ,major=?, mbti=?, hobby=? WHERE email=?', [req.user.email, post.sex, post.age, post.smoke, post.major, mbti, hobby, req.user.email]);
             return res.redirect('/myprofile')
         }else{
-            await db.query('INSERT INTO friendprofiles(email,sex,age,smoke,major,mbti,hobby) VALUES(?,?,?,?,?,?,?)',[req.user.email,post.sex,post.age,post.smoke,post.major,mbti,hobby])
+            await db.query('INSERT INTO friendprofiles(email,sex,age,smoke,major,mbti,hobby,ismatched) VALUES(?,?,?,?,?,?,?,?)',[req.user.email,post.sex,post.age,post.smoke,post.major,mbti,hobby,'X'])
             return res.redirect('/myprofile')
         }
     }catch(error){

@@ -92,7 +92,7 @@ exports.mysqlsubmit = async(req,res,next) =>{
 exports.lovealgorithm = async(req,res,next) =>{
     try{
         console.log('1')
-        let User = (await db.query('SELECT * FROM loveprofiles WHERE ismatched=? ORDER BY id ASC LIMIT 1'),['X'])[0][0];
+        let User = (await db.query("SELECT * FROM loveprofiles WHERE ismatched='X' ORDER BY id ASC LIMIT 1"))[0][0];
         console.log('2')
         let MatchingUser = (await db.query('SELECT * FROM userprofiles WHERE email=?', [User.email,'X']))[0][0];
         console.log('3')

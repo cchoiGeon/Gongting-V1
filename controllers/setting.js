@@ -42,10 +42,10 @@ exports.loveprofile = async(req,res,next) =>{
             where:{email:req.user.email}
         })
         if(exUser){
-            await db.query('UPDATE loveprofiles SET email=?, sex=?, age=?,smoke=?, major=?, mbti=?, hobby=? ,features=? WHERE email=?', [req.user.email, post.sex, post.age, post.smoke ,post.major, mbti, hobby ,features, req.user.email]);
+            await db.query('UPDATE loveprofiles SET email=?, sex=?, age=?, major=?, smoke=?, mbti=?, hobby=? ,features=? WHERE email=?', [req.user.email, post.sex, post.age ,post.major, post.smoke, mbti, hobby ,features, req.user.email]);
             return res.redirect('/myprofile')
         }else{
-            await db.query('INSERT INTO loveprofiles(email,sex,age,smoke,major,mbti,hobby,features) VALUES(?,?,?,?,?,?,?,?)',[req.user.email,post.sex,post.age,post.smoke,post.major,mbti,hobby,features])
+            await db.query('INSERT INTO loveprofiles(email,sex,age,major,smoke,mbti,hobby,features) VALUES(?,?,?,?,?,?,?,?)',[req.user.email,post.sex,post.age,post.major,post.smoke,mbti,hobby,features])
             return res.redirect('/myprofile')
         }
     }catch(error){

@@ -15,11 +15,11 @@ class LoveProfile extends Sequelize.Model {
                 type: Sequelize.TEXT,
                 allowNull: false,
             },
-            smoke: {
+            major : {
                 type: Sequelize.TEXT,
                 allowNull: false,
             },
-            major : {
+            smoke: {
                 type: Sequelize.TEXT,
                 allowNull: false,
             },

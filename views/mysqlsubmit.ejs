@@ -7,6 +7,32 @@
 </head>
 <body>
     <div>
+        <h3>User 현황</h3>
+        <table border="1">
+            <th>이메일</th>
+            <th>이름</th>
+            <th>아이디</th>
+            <th>학번</th>
+            <th>학생증 인증여부</th>
+            <th>학생증 루트 </th>
+            <%-user%>
+        </table>
+        <h3>UserProfile 현황</h3>
+        <table border="1">
+            <th>이메일</th>
+            <th>이름</th>
+            <th>성별</th>
+            <th>나이</th>
+            <th>전공</th>
+            <th>흡연여부</th>
+            <th>연락처</th>
+            <th>연락처 종류</th>
+            <th>MBTI</th>
+            <th>취미</th>
+            <th>특징</th>
+            <th>매칭여부</th>
+            <%-user%>
+        </table>
         <h3>LoveProfile 현황</h3>
         <table border="1">
             <th>이메일</th>
@@ -17,6 +43,7 @@
             <th>MBTI</th>
             <th>취미</th>
             <th>특징</th>
+            <th>매칭여부</th>
             <%-loveprofile%>
         </table>
     </div>
@@ -30,6 +57,7 @@
             <th>전공</th>
             <th>MBTI</th>
             <th>취미</th>
+            <th>매칭여부</th>
             <%-friendprofile%>
         </table>
     </div>

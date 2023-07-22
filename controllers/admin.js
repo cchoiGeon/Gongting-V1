@@ -3,36 +3,54 @@ const db = require('../db')
 const User = require('../models/user')
 const LoveProfile = require('../models/loveprofile')
 const FriendProfile = require('../models/friendprofile')
+const UserProfile = require("../models/userprofile")
 
 exports.adminpage = (req,res) =>{
     res.render('admin')
 }
-exports.mysqlverify = async(req,res) =>{
-    try{
-        let userlist = await User.findAll({})
-        let tables;
-        for(let i=0; i < userlist.length; i++){
-            tables += `
-            <tr>
-                <td> ${userlist[i].name}</td>
-                <td> ${userlist[i].email}</td>
-                <td> ${userlist[i].studentnum}</td>
-                <td> ${userlist[i].studentcard}</td>
-                <td> ${userlist[i].studentcardroot}</td>
-            </tr>
-            `
-        }
-        res.render('mysqlverify',{'tables':tables})
-    }catch(error){
-        next(error)
-    }
-}
 exports.mysqlsubmit = async(req,res,next) =>{
     try{
+        let userlist = await User.findAll({})
+        let userprofilelist = await UserProfile.findAll({})
         let loveuserlist = await LoveProfile.findAll({})
         let frienduserlist = await FriendProfile.findAll({})
+        let user='';
+        let userprofile='';
         let loveprofile='';
         let friendprofile='';
+        if(userlist){
+            for(let i=0; i < userlist.length; i++){
+                user += `
+                <tr>
+                    <td> ${userlist[i].email}</td>
+                    <td> ${userlist[i].name}</td>
+                    <td> ${userlist[i].studentnum}</td>
+                    <td> ${userlist[i].studentcard}</td>
+                    <td> ${userlist[i].studentcardroot}</td>
+                </tr>
+                `
+            }
+        }
+        if(userprofilelist){
+            for(let i=0; i < userprofilelist.length; i++){
+                userprofile += `
+                <tr>
+                    <td> ${userprofilelist[i].email}</td>
+                    <td> ${userprofilelist[i].name}</td>
+                    <td> ${userprofilelist[i].sex}</td>
+                    <td> ${userprofilelist[i].age}</td>
+                    <td> ${userprofilelist[i].major}</td>
+                    <td> ${userprofilelist[i].smoke}</td>
+                    <td> ${userprofilelist[i].socialmediaid}</td>
+                    <td> ${userprofilelist[i].socialmediaidtype}</td>
+                    <td> ${userprofilelist[i].mbti}</td>
+                    <td> ${userprofilelist[i].hobby}</td>
+                    <td> ${userprofilelist[i].features}</td>
+                    <td> ${userprofilelist[i].ismatched}</td>
+                </tr>
+                `
+            }
+        }
         if(loveuserlist){
             for(let i=0; i < loveuserlist.length; i++){
                 loveprofile += `
@@ -45,6 +63,7 @@ exports.mysqlsubmit = async(req,res,next) =>{
                     <td> ${loveuserlist[i].mbti}</td>
                     <td> ${loveuserlist[i].hobby}</td>
                     <td> ${loveuserlist[i].features}</td>
+                    <td> ${loveuserlist[i].ismatched}</td>
                 </tr>
                 `
             }   
@@ -60,11 +79,12 @@ exports.mysqlsubmit = async(req,res,next) =>{
                     <td> ${frienduserlist[i].major}</td>
                     <td> ${frienduserlist[i].mbti}</td>
                     <td> ${frienduserlist[i].hobby}</td>
+                    <td> ${frienduserlist[i].ismatched}</td>
                 </tr>
                 `
             }  
         }
-        res.render('mysqlsubmit',{'loveprofile':loveprofile,'friendprofile':friendprofile})
+        res.render('mysqlsubmit',{'user':user,'userprofile':userprofile,'loveprofile':loveprofile,'friendprofile':friendprofile})
     }catch(error){
         next(error)
     }

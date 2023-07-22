@@ -120,48 +120,43 @@ exports.lovealgorithm = async(req,res,next) =>{
         }
         else if (!MatchedUser && !MatchedUser2 && !MatchedUser3 && !MatchedUser4) { // 성별, 특징 MatchedUser5
             await db.query('INSERT INTO results(email,name,sex,age,smoke,major,mbti,hobby,features,socialmediaid,socialmediatype) VALUES(?,?,?,?,?,?,?,?,?,?,?)', [User.email, MatchedUser5.name, MatchedUser5.sex, MatchedUser5.age, MatchedUser5.smoke ,MatchedUser5.major, MatchedUser5.mbti, MatchedUser5.hobby, MatchedUser5.features, MatchedUser5.socialmediaid, MatchedUser5.socialmediaidtype]);
-            await db.query('UPDATE userprofiles SET ismatched=? WHERE=?',['O',User.email])
-            await db.query('UPDATE loveprofiles SET ismatched=? WHERE=?',['O',User.email])
+            await db.query('UPDATE userprofiles SET ismatched=? WHERE email=?',['O',User.email])
+            await db.query('UPDATE loveprofiles SET ismatched=? WHERE email=?',['O',User.email])
             await db.query('INSERT INTO results(email,name,sex,age,smoke,major,mbti,hobby,features,socialmediaid,socialmediatype) VALUES(?,?,?,?,?,?,?,?,?,?,?)', [MatchedUser5.email, MatchingUser.name, MatchingUser.sex, MatchingUser.age, MatchingUser.smoke ,MatchingUser.major, MatchingUser.mbti, MatchingUser.hobby, MatchingUser.features, MatchingUser.socialmediaid, MatchingUser.socialmediaidtype]);
             await db.query('UPDATE userprofiles SET ismatched=? WHERE=?',['O',MatchedUser5.email])
             await db.query('UPDATE loveprofiles SET ismatched=? WHERE=?',['O',MatchedUser5.email])
             return res.redirect('/')
         } else if (!MatchedUser && !MatchedUser2 && !MatchedUser3) { // 성별, 특징, 취미 MatchedUser4
             await db.query('INSERT INTO results(email,name,sex,age,smoke,major,mbti,hobby,features,socialmediaid,socialmediatype) VALUES(?,?,?,?,?,?,?,?,?,?,?)', [User.email, MatchedUser4.name, MatchedUser4.sex, MatchedUser4.age, MatchedUser5.smoke , MatchedUser4.major, MatchedUser4.mbti, MatchedUser4.hobby, MatchedUser4.features, MatchedUser4.socialmediaid, MatchedUser4.socialmediaidtype]);
-            await db.query('UPDATE userprofiles SET ismatched=? WHERE=?',['O',User.email])
-            await db.query('UPDATE loveprofiles SET ismatched=? WHERE=?',['O',User.email])
+            await db.query('UPDATE userprofiles SET ismatched=? WHERE email=?',['O',User.email])
+            await db.query('UPDATE loveprofiles SET ismatched=? WHERE email=?',['O',User.email])
             await db.query('INSERT INTO results(email,name,sex,age,smoke,major,mbti,hobby,features,socialmediaid,socialmediatype) VALUES(?,?,?,?,?,?,?,?,?,?,?)', [MatchedUser4.email, MatchingUser.Name, MatchingUser.sex, MatchingUser.age, MatchingUser.smoke ,MatchingUser.major, MatchingUser.mbti, MatchingUser.hobby, MatchingUser.features, MatchingUser.socialmediaid, MatchingUser.socialmediaidtype]);
-            await db.query('UPDATE userprofiles SET ismatched=? WHERE=?',['O',MatchedUser4.email])
-            await db.query('UPDATE loveprofiles SET ismatched=? WHERE=?',['O',MatchedUser4.email])
+            await db.query('UPDATE userprofiles SET ismatched=? WHERE email=?',['O',MatchedUser4.email])
+            await db.query('UPDATE loveprofiles SET ismatched=? WHERE email=?',['O',MatchedUser4.email])
             return res.redirect('/')
         } else if (!MatchedUser && !MatchedUser2) { // 성별, 특징, 취미, mbti가 같을 때 MatchedUser3
             await db.query('INSERT INTO results(email,name,sex,age,smoke,major,mbti,hobby,features,socialmediaid,socialmediatype) VALUES(?,?,?,?,?,?,?,?,?,?,?)', [User.email, MatchedUser3.name, MatchedUser3.sex, MatchedUser3.age,  MatchedUser5.smoke ,MatchedUser3.major, MatchedUser3.mbti, MatchedUser3.hobby, MatchedUser3.features, MatchedUser3.socialmediaid, MatchedUser3.socialmediaidtype]);
-            await db.query('UPDATE userprofiles SET ismatched=? WHERE=?',['O',User.email])
-            await db.query('UPDATE loveprofiles SET ismatched=? WHERE=?',['O',User.email])
+            await db.query('UPDATE userprofiles SET ismatched=? WHERE email=?',['O',User.email])
+            await db.query('UPDATE loveprofiles SET ismatched=? WHERE email=?',['O',User.email])
             await db.query('INSERT INTO results(email,name,sex,age,smoke,major,mbti,hobby,features,socialmediaid,socialmediatype) VALUES(?,?,?,?,?,?,?,?,?,?,?)', [MatchedUser3.email, MatchingUser.name, MatchingUser.sex, MatchingUser.age, MatchingUser.smoke ,MatchingUser.major, MatchingUser.mbti, MatchingUser.hobby, MatchingUser.features, MatchingUser.socialmediaid, MatchingUser.socialmediaidtype]);
-            await db.query('UPDATE userprofiles SET ismatched=? WHERE=?',['O',MatchedUser3.email])
-            await db.query('UPDATE loveprofiles SET ismatched=? WHERE=?',['O',MatchedUser3.email])
+            await db.query('UPDATE userprofiles SET ismatched=? WHERE email=?',['O',MatchedUser3.email])
+            await db.query('UPDATE loveprofiles SET ismatched=? WHERE email=?',['O',MatchedUser3.email])
             return res.redirect('/')
         } else if (!MatchedUser) { // 성별, 특징, 취미, mbti, 전공이 같을 때 MatchedUser2
             await db.query('INSERT INTO results(email,name,sex,age,smoke,major,mbti,hobby,features,socialmediaid,socialmediatype) VALUES(?,?,?,?,?,?,?,?,?,?,?)', [User.email, MatchedUser2.name, MatchedUser2.sex, MatchedUser2.age,  MatchedUser5.smoke ,MatchedUser2.major, MatchedUser2.mbti, MatchedUser2.hobby, MatchedUser2.features, MatchedUser2.socialmediaid, MatchedUser2.socialmediaidtype]);
-            await db.query('UPDATE userprofiles SET ismatched=? WHERE=?',['O',User.email])
-            await db.query('UPDATE loveprofiles SET ismatched=? WHERE=?',['O',User.email])
+            await db.query('UPDATE userprofiles SET ismatched=? WHERE email=?',['O',User.email])
+            await db.query('UPDATE loveprofiles SET ismatched=? WHERE email=?',['O',User.email])
             await db.query('INSERT INTO results(email,name,sex,age,smoke,major,mbti,hobby,features,socialmediaid,socialmediatype) VALUES(?,?,?,?,?,?,?,?,?,?,?)', [MatchedUser2.email, MatchingUser.name, MatchingUser.sex, MatchingUser.age, MatchingUser.smoke ,MatchingUser.major, MatchingUser.mbti, MatchingUser.hobby, MatchingUser.features, MatchingUser.socialmediaid, MatchingUser.socialmediaidtype]);
-            await db.query('UPDATE userprofiles SET ismatched=? WHERE=?',['O',MatchedUser2.email])
-            await db.query('UPDATE loveprofiles SET ismatched=? WHERE=?',['O',MatchedUser2.email])
+            await db.query('UPDATE userprofiles SET ismatched=? WHERE email=?',['O',MatchedUser2.email])
+            await db.query('UPDATE loveprofiles SET ismatched=? WHERE email=?',['O',MatchedUser2.email])
             return res.redirect('/')
         } else { // 다 같을 때
             await db.query('INSERT INTO results(email,name,sex,age,smoke,major,mbti,hobby,features,socialmediaid,socialmediatype) VALUES(?,?,?,?,?,?,?,?,?,?,?)', [User.email, MatchedUser.name, MatchedUser.sex, MatchedUser.age,  MatchedUser5.smoke ,MatchedUser.major, MatchedUser.mbti, MatchedUser.hobby, MatchedUser.features, MatchedUser.socialmediaid, MatchedUser.socialmediaidtype]);
-            console.log('1')
-            await db.query("UPDATE userprofiles SET ismatched=? WHERE=?",['O',User.email])
-            console.log('12')
-            await db.query("UPDATE loveprofiles SET ismatched=? WHERE=?",['O',User.email])
-            console.log('13')
+            await db.query("UPDATE userprofiles SET ismatched=? WHERE email=?",['O',User.email])
+            await db.query("UPDATE loveprofiles SET ismatched=? WHERE email=?",['O',User.email])
             await db.query('INSERT INTO results(email,name,sex,age,smoke,major,mbti,hobby,features,socialmediaid,socialmediatype) VALUES(?,?,?,?,?,?,?,?,?,?,?)', [MatchedUser.email, MatchingUser.name, MatchingUser.sex, MatchingUser.age, MatchingUser.smoke ,MatchingUser.major, MatchingUser.mbti, MatchingUser.hobby, MatchingUser.features, MatchingUser.socialmediaid, MatchingUser.socialmediaidtype]);
-            console.log('14')
-            await db.query("UPDATE userprofiles SET ismatched=? WHERE=?",['O',MatchedUser.email])
-            console.log('15')
-            await db.query("UPDATE loveprofiles SET ismatched=? WHERE=?",['O',MatchedUser.email])
+            await db.query("UPDATE userprofiles SET ismatched=? WHERE email=?",['O',MatchedUser.email])
+            await db.query("UPDATE loveprofiles SET ismatched=? WHERE email=?",['O',MatchedUser.email])
             return res.redirect('/')
         }
     }catch(error){
